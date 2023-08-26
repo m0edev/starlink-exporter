@@ -25,7 +25,7 @@ async fn main() -> Result<(), Error> {
     tracing_subscriber::fmt::init();
 
     let bind_address = dotenv::var("BIND_ADDRESS")
-        .unwrap_or("0.0.0.0:9184".to_string())
+        .unwrap_or("192.168.1.11:9184".to_string())
         .parse::<SocketAddr>()
         .expect("parsing BIND_ADDRESS");
     let starlink_address = dotenv::var("STARLINK_ADDRESS").unwrap_or("http://dishy.starlink.com:9200".to_string());
